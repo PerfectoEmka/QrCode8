@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     } catch (ActivityNotFoundException e) {
                         startActivity(new Intent(Intent.ACTION_VIEW,
-                                Uri.parse("http://instagram.com/xxx")));
+                                Uri.parse(result.getContents())));
                     }
                 }
             });
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private void generateQr(){
         try {
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-            Bitmap bitmap = barcodeEncoder.encodeBitmap("http://instagram.com"
+            Bitmap bitmap = barcodeEncoder.encodeBitmap("https://instagram.com/boris.raw?utm_medium=copy_link"
                     , BarcodeFormat.QR_CODE
                     , 200
                     , 200);
